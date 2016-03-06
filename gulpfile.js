@@ -9,7 +9,8 @@ var gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	autoprefixer = require('gulp-autoprefixer'),
 	naturalSort = require('gulp-natural-sort'),
-	webserver = require('gulp-webserver');
+	webserver = require('gulp-webserver'),
+	livereload = require('gulp-livereload');
 
 // clean
 gulp.task('clean', function () {
@@ -25,12 +26,13 @@ gulp.task('sass', function () {
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('dist/css'))
 		// .pipe(autoprefixer())
-		.pipe(gulp.dest('dist/css'));
+		.pipe(gulp.dest('dist/css'))		
+    .pipe(livereload());
 });
 
 // file injector
 gulp.task('inject', function () {
-	gulp.src('index.html')
+	gulp.src('**/*.html')
 		.pipe(inject(gulp.src(['dist/**/*.css', 'css/**/*.css'], { 
 			read: false 
 		})
@@ -42,6 +44,7 @@ gulp.task('inject', function () {
 
 // watch files changes
 gulp.task('watch', function () {
+	livereload.listen();
   gulp.watch('./sass/**/*.scss', ['sass']);
 });
 

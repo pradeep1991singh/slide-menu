@@ -1,0 +1,69 @@
+@import "color.variables";
+
+@mixin menu-position ($position: left) {
+  @if $position == top {  
+    top: 0;    		
+  } @else if $position == right {
+    top: 0; 
+    right: 0;
+    margin-left: auto;
+    margin-right: 56px;   
+  } @else if $position == bottom {
+    bottom: 0;   
+  } @else {
+    top: 0; 
+    left: 0;
+    margin-right: auto;   
+  }   
+}
+
+@mixin menu-transition () {
+  -moz-transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;  
+}
+
+@mixin nav-position ($position: left) {
+  position: fixed;	
+	width: 250px;
+	height: 100%;
+  @include menu-transition();
+	z-index: 2;	
+  @if $position == top {
+		width: 100%;
+		height: 75px;
+    left: 0;
+		margin: -250px 0 0 0;		
+  } @else if $position == right {
+    top: 0;
+    right: 0;
+		margin:0 -250px 0 0;
+    margin-left: auto;
+  } @else if $position == bottom {
+    width: 100%;
+		height: 75px;
+    bottom: 0;
+		margin:0 0 -250px 0;
+  } @else {
+    top: 0;
+    left: 0;
+		margin:0 0 0 -250px;
+  }	
+}
+
+@mixin menu-links ($position: left) {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background: $light-black;
+  overflow: hidden; 
+  @if $position == top or $position == bottom {
+    display: flex;
+    width: 100%;
+    height: auto;		
+  } @else if $position == right or $position == left {
+    width: 250px;
+    height: 100%;
+  }   
+}

@@ -1,40 +1,19 @@
-@import "color.variables";
+@import "color.variables",
+        "mixins";
+
+header {
+  display: flex;
+}
 
 .sliding--menu__wrapper {
   overflow: hidden;
+  @include menu-position();
   
   nav {
-    position:fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height:100%;
-    margin:0 0 0 -250px;
-    -moz-transition: all 200ms ease-in;
-    -webkit-transition: all 200ms ease-in;
-    -o-transition: all 200ms ease-in;
-    transition: all 200ms ease-in;
-    z-index: 2;
+    @include nav-position();
 
     ul {
-      width: 250px;
-      height: 100%;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      background: $light-black;
-      overflow: hidden;
-      
-      li {
-        margin: 0;
-        
-        .logo {
-          padding: 15px;          
-          margin-top: 5px;
-          margin-bottom: 15px;       
-        }
-      }
-      
+      @include menu-links();      
       .site--logo {
         width: 75px;
         padding: 15px;
@@ -50,7 +29,7 @@
         background: $semi-light-black;
       }
     }
-  }
+  }    
   
   label {
     display: block;
@@ -62,12 +41,9 @@
     text-align: center;
     font-size: 2em;
     position: fixed;
-    -moz-transition: all 200ms ease-in;
-    -webkit-transition: all 200ms ease-in;
-    -o-transition: all 200ms ease-in;
-    transition: all 200ms ease-in;
     z-index: 2;
-  }
+    @include menu-transition();
+  }  
   
   .obfuscator {
     visibility: hidden;
@@ -88,12 +64,12 @@
     display: none;
     
     &:checked ~ nav {
-      margin: 0;
+      margin-left: 0;
     } 
     
     &:checked ~ label {
-      left: 260px;
       background: $white;
+      left: 260px;
     }
     
     &:checked ~ .obfuscator {
@@ -104,4 +80,89 @@
       z-index: 1;   
     }
   }
+  
+  // sliding menus based on position
+  &.slide--top {
+    @include menu-position(top);
+    
+    // navigation
+    nav {
+      @include nav-position(top);
+      ul {
+        @include menu-links(top);
+      }      
+    }
+    
+    // navigation open logic
+    input[type="checkbox"] {   
+      &:checked ~ nav {
+        margin-top: 0;
+      }
+    }
+    
+    // menu open logic
+    input[type="checkbox"] {   
+      &:checked ~ label {
+        top: 260px;
+        left: auto; 
+      }
+    }        
+  }
+  
+  &.slide--right {
+    @include menu-position(right);
+    
+    // navigation    
+    nav {
+      @include nav-position(right);
+      
+      ul {
+        @include menu-links(right);
+      }      
+    }
+    
+    // navigation open logic    
+    input[type="checkbox"] {   
+      &:checked ~ nav {
+        margin-right: 0;
+        margin-left: auto;
+      }
+    }
+    
+    // menu open logic    
+    input[type="checkbox"] {   
+      &:checked ~ label {
+        right: 260px; 
+        margin-left: auto; 
+      }
+    }        
+  }
+  
+  &.slide--bottom {
+    @include menu-position(bottom);
+    
+    // navigation    
+    nav {
+      @include nav-position(bottom);
+      ul {
+        @include menu-links(bottom);
+      }      
+    }
+    
+    // navigation open logic    
+    input[type="checkbox"] {   
+      &:checked ~ nav {
+        margin-bottom: 0;
+      }
+    }
+    
+    // menu open logic    
+    input[type="checkbox"] {   
+      &:checked ~ label {
+        bottom: 260px;
+        left: auto;
+      }
+    }        
+  }  
+           
 }
