@@ -1,0 +1,40 @@
+{
+  "name": "slide-menu",
+  "version": "1.0.0",
+  "description": "Pure CSS3 sliding menu",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pradeep1991singh/slide-menu.git"
+  },
+  "keywords": [
+    "pure",
+    "css3",
+    "sliding",
+    "hamburger",
+    "menu"
+  ],
+  "author": "pradeep1991singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pradeep1991singh/slide-menu/issues"
+  },
+  "homepage": "https://github.com/pradeep1991singh/slide-menu#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-inject": "^3.0.0",
+    "gulp-natural-sort": "^0.1.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-watch": "^4.3.5",
+    "gulp-webserver": "^0.9.1",
+    "run-sequence": "^1.1.5"
+  },
+  "dependencies": {
+    "del": "^2.2.0"
+  }
+}

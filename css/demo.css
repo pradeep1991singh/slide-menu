@@ -1,0 +1,13 @@
+header {
+	display: flex;
+	display: -webkit-flex;
+}
+
+.header--title {
+	margin-left: auto;	
+}
+
+.page-content {
+	margin-top: 56px;
+	text-align: center;
+}

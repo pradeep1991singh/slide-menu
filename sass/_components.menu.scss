@@ -1,0 +1,107 @@
+@import "color.variables";
+
+.sliding--menu__wrapper {
+  overflow: hidden;
+  
+  nav {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height:100%;
+    margin:0 0 0 -250px;
+    -moz-transition: all 200ms ease-in;
+    -webkit-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    z-index: 2;
+
+    ul {
+      width: 250px;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      background: $light-black;
+      overflow: hidden;
+      
+      li {
+        margin: 0;
+        
+        .logo {
+          padding: 15px;          
+          margin-top: 5px;
+          margin-bottom: 15px;       
+        }
+      }
+      
+      .site--logo {
+        width: 75px;
+        padding: 15px;
+      }
+    }
+    
+    a {
+      color: $white;
+      display: block;
+      padding: 15px;
+      
+      &:hover {
+        background: $semi-light-black;
+      }
+    }
+  }
+  
+  label {
+    display: block;
+    font-weight: 700;
+    width: 56px;
+    height: 56px;
+    line-height: 56px;
+    color: $white;
+    text-align: center;
+    font-size: 2em;
+    position: fixed;
+    -moz-transition: all 200ms ease-in;
+    -webkit-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    z-index: 2;
+  }
+  
+  .obfuscator {
+    visibility: hidden;
+    -moz-transition: all 200ms ease-in;
+    -webkit-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;      
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 4;
+    transition-duration: .5s;   
+  }
+  
+  input[type="checkbox"] {
+    display: none;
+    
+    &:checked ~ nav {
+      margin: 0;
+    } 
+    
+    &:checked ~ label {
+      left: 260px;
+      background: $white;
+    }
+    
+    &:checked ~ .obfuscator {
+      visibility: visible;
+      pointer-events: auto;
+      opacity: 0.5;
+      background: $semi-light-black;
+      z-index: 1;   
+    }
+  }
+}
