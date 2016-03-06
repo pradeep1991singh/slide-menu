@@ -9,26 +9,28 @@
 ##### Then sliding menu template
 
 ```
-<div class="sliding--menu__wrapper">
-	<input type="checkbox" id="navigation" />        
-	<label id="hamburger--icon" for="navigation">
-		<span class="icon-menu"></span>
-	</label>      
-
-	<nav>
-		<ul>
-			<li><img class="site--logo" src="dist/images/logo.png" alt="site-logo" /></li>        
-			<li>
-				<a href="#">Home</a>
-				<a href="#">About us</a>
-				<a href="#">Contact us</a>
-			</li>
-		</ul>
-	</nav>
+<header>
+	<div class="sliding--menu__wrapper">
+		<input type="checkbox" id="navigation" />        
+		<label id="hamburger--icon" for="navigation">
+			<span class="icon-menu"></span>
+		</label>      
 	
-	<div class="obfuscator">
-	</div>        
-</div>
+		<nav>
+			<ul>
+				<li><img class="site--logo" src="dist/images/logo.png" alt="site-logo" /></li>        
+				<li>
+					<a href="#">Home</a>
+					<a href="#">About us</a>
+					<a href="#">Contact us</a>
+				</li>
+			</ul>
+		</nav>
+		
+		<div class="obfuscator">
+		</div>        
+	</div>
+<header>
 ```
 
 ## Contributors
