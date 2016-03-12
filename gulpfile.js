@@ -25,8 +25,7 @@ gulp.task('sass', function () {
 		.pipe(plumber())
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('dist/css'))
-		// .pipe(autoprefixer())
-		.pipe(gulp.dest('dist/css'))		
+		// .pipe(autoprefixer())		
     .pipe(livereload());
 });
 
@@ -60,6 +59,17 @@ gulp.task('webserver', function() {
 
 // default
 gulp.task('default', function () {
+	runSequence(
+		'clean',
+		'sass',
+		'inject',
+		'watch',
+		'webserver'
+		);
+});
+
+// default
+gulp.task('dist', function () {
 	runSequence(
 		'clean',
 		'sass',

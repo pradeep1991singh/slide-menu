@@ -141,6 +141,10 @@ header {
   &.slide--bottom {
     @include menu-position(bottom);
     
+    label {
+      bottom: 0;
+    }
+    
     // navigation    
     nav {
       @include nav-position(bottom);
