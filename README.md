@@ -2,12 +2,12 @@
 > Pure CSS3 sliding menu
 
 ## Usage:
-##### Gernerate css file in dist/ folder
+##### Download repo, run
 ```
-gulp sass
+gulp dist
 
 ```
-##### And then add css file in head tag of html file
+##### Copy dist/ folder And then add css file in head tag of html file
 ```
 <link rel="stylesheet" href="dist/styles.css">
 ```
