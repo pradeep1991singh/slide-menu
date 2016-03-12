@@ -38,6 +38,10 @@ gulp dist
 <header>
 ```
 
+## Demo
+
+[Demo] (http://hardcoredevs.com/demo/)
+
 ## Contributors
 [@pradeep91singh] (https://twitter.com/pradeep91singh)
 
