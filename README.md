@@ -2,8 +2,9 @@
 > Pure CSS3 sliding menu
 
 ## Usage:
+##### Gernerate css file in dist/ folder
 ```
-gulp dist
+gulp sass
 
 ```
 ##### And then add css file in head tag of html file
