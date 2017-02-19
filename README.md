@@ -53,7 +53,7 @@ $ gulp dist
 
 ## Demo
 
-[Demo] (http://hardcoredevs.com/demo/)
+[Demo] (https://htmlpreview.github.io/?https://raw.githubusercontent.com/pradeep1991singh/slide-menu/master/index.html)
 
 ## License
 Copyright (c) 2016, pradeep singh
