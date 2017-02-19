@@ -12,6 +12,7 @@ $ git clone https://github.com/pradeep1991singh/slide-menu.git
 
 ```sh
 $ cd slide-menu
+$ npm install
 $ gulp dist
 ```
 
