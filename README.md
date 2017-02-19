@@ -1,26 +1,38 @@
 # slide-menu
 > Pure CSS3 sliding menu
 
-## Usage:
-##### Download repo, run
-```
-gulp dist
+## Build
+#### Download repo
 
+```sh
+$ git clone https://github.com/pradeep1991singh/slide-menu.git
 ```
-##### Copy dist/ folder And then add css file in head tag of html file
+
+#### Generate styles
+
+```sh
+$ cd slide-menu
+$ gulp dist
 ```
+
+## Usage
+
+#### Copy/Paste `dist` folder in your project And then add css file in head tag of html file
+
+```html
 <link rel="stylesheet" href="dist/styles.css">
 ```
-##### Then sliding menu template
 
-```
+#### Then add sliding menu template
+
+```html
 <header>
 	<div class="sliding--menu__wrapper">
 		<input type="checkbox" id="navigation" />        
 		<label id="hamburger--icon" for="navigation">
 			<span class="icon-menu"></span>
 		</label>      
-	
+
 		<nav>
 			<ul>
 				<li><img class="site--logo" src="dist/images/logo.png" alt="site-logo" /></li>        
@@ -31,7 +43,7 @@ gulp dist
 				</li>
 			</ul>
 		</nav>
-		
+
 		<div class="obfuscator">
 		</div>        
 	</div>
@@ -41,9 +53,6 @@ gulp dist
 ## Demo
 
 [Demo] (http://hardcoredevs.com/demo/)
-
-## Contributors
-[@pradeep91singh] (https://twitter.com/pradeep91singh)
 
 ## License
 Copyright (c) 2016, pradeep singh
@@ -59,4 +68,3 @@ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-
