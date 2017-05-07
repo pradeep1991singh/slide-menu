@@ -1,4 +1,4 @@
-# slide-menu
+# Pure CSS Only Slide Menu
 > Pure CSS3 sliding menu
 
 ## Build
